@@ -139,7 +139,6 @@ public class Graph extends JFrame {
                 nodes[i].getaxis(Math.abs(r.nextInt() % w), Math.abs(r.nextInt() % h)); //second node stored in a first node array
                 for(int j=0; j<i;j++) {
                     distance = getDistance(nodes[j].return_xaxis(), nodes[j].return_yaxis(), nodes[i].return_xaxis(), nodes[i].return_yaxis());
-                    //System.out.println("Distance"+" "+distance);
                     if ( distance > 100 && distance < 500 ) {   //if you want to cater for more nodes increase the bracket for distance
                         // means node will be added to the list and wont go to the else part of the loop
                     } else{
@@ -166,10 +165,9 @@ public class Graph extends JFrame {
             g2d.setPaint(Color.RED);
             for(int v=0;v<nodes.length;v++){
                 for(Neighbor nbr=nodes[v].adjList; nbr!=null;nbr=nbr.next){
-                    g2d.drawLine(nodes[v].nxaxis,nodes[v].nyaxis,nodes[nbr.nodeNum].nxaxis,nodes[nbr.nodeNum].nyaxis);
+                    g2d.drawLine(nodes[v].return_xaxis()+11,nodes[v].return_yaxis()+11,nodes[nbr.nodeNum].return_xaxis()+11,nodes[nbr.nodeNum].return_yaxis()+11);  //half of width and height of ellipse will center the lines
                 }
             }
-
         }
 
         private void selectDrawing(Graphics g){

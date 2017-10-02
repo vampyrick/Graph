@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="976e109f-1058-4a6a-94b8-2c4534993b6c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graph.java" afterPath="$PROJECT_DIR$/src/Graph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$GraphLoader.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$GraphLoader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$surface.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$surface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +19,8 @@
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="194" column="25" lean-forward="false" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
+            <state relative-caret-position="243">
+              <caret line="173" column="44" lean-forward="true" selection-start-line="173" selection-start-column="44" selection-end-line="173" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initUI#0;class#Graph#0" expanded="false" />
@@ -55,9 +57,16 @@
       <find>5</find>
       <find>test</find>
       <find>print</find>
+      <find>random</find>
+      <find>node</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="vampyrick" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -82,7 +91,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="y" value="30" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
@@ -258,7 +267,7 @@
       <option name="presentableId" value="Default" />
       <updated>1506956965120</updated>
       <workItem from="1506956968662" duration="3397000" />
-      <workItem from="1506962862868" duration="6070000" />
+      <workItem from="1506962862868" duration="7426000" />
     </task>
     <task id="LOCAL-00001" summary="Firt merger commit">
       <created>1506959797906</created>
@@ -267,11 +276,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506959797906</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="edges etc centered. now only buttons to create">
+      <created>1506970835480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1506970835481</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9467000" />
+    <option name="totallyTimeSpent" value="10823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
@@ -285,7 +301,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -314,7 +330,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Firt merger commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Firt merger commit" />
+    <MESSAGE value="edges etc centered. now only buttons to create" />
+    <option name="LAST_COMMIT_MESSAGE" value="edges etc centered. now only buttons to create" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -384,8 +401,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="194" column="25" lean-forward="false" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
+        <state relative-caret-position="243">
+          <caret line="173" column="44" lean-forward="true" selection-start-line="173" selection-start-column="44" selection-end-line="173" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initUI#0;class#Graph#0" expanded="false" />

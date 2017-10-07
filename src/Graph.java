@@ -1,8 +1,12 @@
+import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Rectangle;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.geom.Ellipse2D;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,6 +16,11 @@ import java.util.Scanner;
 public class Graph extends JFrame {
     private int num_nodes = 0;
     Node [] nodes;  //global nodes
+    private int num_edges = 0;
+    Edge [] edges;
+    int mX = 0;
+    int mY = 0;
+    JPanel jp;
 
     private void initUI(){                  //initializing the User Interface
         final surface surface = new surface();
@@ -19,8 +28,10 @@ public class Graph extends JFrame {
 
         setTitle("Graph");
         setSize(1000, 1000);
+        setBackground(Color.RED);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -44,6 +55,7 @@ public class Graph extends JFrame {
             }
             System.out.println("\n");
         }
+        System.out.println(num_edges);
     }
 
     private Graph(){
@@ -117,9 +129,8 @@ public class Graph extends JFrame {
         }
     }
 
-    class surface extends JPanel implements MouseListener {
+    class surface extends JPanel implements MouseListener, MouseMotionListener {
         private int mStartX, mStartY;   //for last mouse position
-        // private Node[] n = new Node[num_nodes];
         private boolean selected =false;
 
         public surface(){
@@ -165,9 +176,26 @@ public class Graph extends JFrame {
             g2d.setPaint(Color.RED);
             for(int v=0;v<nodes.length;v++){
                 for(Neighbor nbr=nodes[v].adjList; nbr!=null;nbr=nbr.next){
-                    g2d.drawLine(nodes[v].return_xaxis()+11,nodes[v].return_yaxis()+11,nodes[nbr.nodeNum].return_xaxis()+11,nodes[nbr.nodeNum].return_yaxis()+11);  //half of width and height of ellipse will center the lines
+                    g2d.drawLine(nodes[v].return_xaxis()+11,nodes[v].return_yaxis()+11,nodes[nbr.nodeNum].return_xaxis()+11,nodes[nbr.nodeNum].return_yaxis()+11);//half of width and height of ellipse will center the lines
                 }
             }
+        }
+
+        private void Edgeremoving (Graphics g){
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.setPaint(Color.red);
+            for(int v=0;v<nodes.length;v++){
+                for(Neighbor nbr=nodes[v].adjList; nbr!=null;nbr=nbr.next){
+                    if ((getDistanceEdge(nodes[v].return_xaxis(),nodes[v].return_yaxis(),nodes[nbr.nodeNum].return_xaxis(),nodes[nbr.nodeNum].return_yaxis(),mX,mY)) < 10){
+                        System.out.println("Edge selected");
+                        break;
+                    }
+                    System.out.println("Edge not selected");
+                    break;
+                }
+                break;
+            }
+
         }
 
         private void selectDrawing(Graphics g){
@@ -187,10 +215,53 @@ public class Graph extends JFrame {
         @Override
         public void paintComponent (Graphics g){
             super.paintComponent(g);
+            topDrawing(g);
             if(!selected)   //meaning only called once
                 doDrawing(g);
             selectDrawing(g);
             edgeDrawing(g);
+            Edgeremoving(g);
+        }
+
+        public void topDrawing(Graphics g){
+            g.drawString("A", 25, 25);
+            Rectangle label1 = new Rectangle(23,15,22,13);
+            g.drawString("B",75,25);
+            Rectangle label2 = new Rectangle(73,15,22,13);
+            g.drawString("C",125,25);
+            Rectangle label3 = new Rectangle(123,15,22,13);
+            g.drawString("D",175,25);
+            Rectangle label4 = new Rectangle(173,15,22,13);
+            g.drawString("F_1",225,25);
+            Rectangle label5 = new Rectangle(223,15,22,13);
+            g.drawString("F_2",295,25);
+            Rectangle label6 = new Rectangle(293,15,22,13);
+            g.drawString("F_3",365,25);
+            Rectangle label7 = new Rectangle(363,15,22,13);
+            g.drawString("F_4",435,25);
+            Rectangle label8 = new Rectangle(433,15,22,13);
+        }
+
+        public double getDistanceEdge(float x1,float y1,float x2,float y2,float x3,float y3)
+        {
+            float px=x2-x1;
+            float py=y2-y1;
+            float temp=(px*px)+(py*py);
+            float u=((x3 - x1) * px + (y3 - y1) * py) / (temp);
+            if(u>1){
+                u=1;
+            }
+            else if(u<0){
+                u=0;
+            }
+            float x = x1 + u * px;
+            float y = y1 + u * py;
+
+            float dx = x - x3;
+            float dy = y - y3;
+            double dist = Math.sqrt(dx*dx + dy*dy);
+            return dist;
+
         }
 
         public int getDistance(int x1, int y1, int x2, int y2){ //eficient method for distance calculation
@@ -201,12 +272,12 @@ public class Graph extends JFrame {
 
         @Override
         public void mouseClicked(MouseEvent e) {    //for node selection
-            int x = e.getX();
-            int y = e.getY();
+            mX = e.getX();
+            mY = e.getY();
             int d2 = 0;
             for (int  i = 0; i < nodes.length ; i++ ){
-                d2 = getDistance(nodes[i].return_xaxis(),nodes[i].return_yaxis(),x,y);
-                if (d2<=50){ //distance between the mouse clicked pointer and the center of the circle
+                d2 = getDistance(nodes[i].return_xaxis(),nodes[i].return_yaxis(),mX,mY);
+                if (d2<=20){                    //distance between the mouse clicked pointer and the center of the circle
                     nodes[i].selected = true;
                     selected = true;
                     break;
@@ -217,6 +288,10 @@ public class Graph extends JFrame {
         }
         @Override
         public void mousePressed(MouseEvent e) {
+            int prex = e.getX();
+            int prey = e.getY();
+
+
         }
 
         @Override
@@ -233,6 +308,15 @@ public class Graph extends JFrame {
         public void mouseExited(MouseEvent e) {
 
         }
+
+        @Override
+        public void mouseDragged(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e) {
+
+        }
     }
 
     class GraphLoader {
@@ -240,8 +324,6 @@ public class Graph extends JFrame {
         private JFileChooser chooser = new JFileChooser();
         private File selected_file = null;
         private String label = null;
-        //private int num_nodes = 0;  //number of nodes on top of text file
-        //Node [] nodes;
 
         public GraphLoader(){
             FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -263,9 +345,12 @@ public class Graph extends JFrame {
 
             Scanner s = new Scanner(return_selectedfile());
             num_nodes = s.nextInt();    //saving number of nodes on top of the text file
+            num_edges = s.nextInt();
+
             s.nextLine();
 
             nodes = new Node[num_nodes];
+            edges = new Edge[num_edges];
 
             //read labels
             for (int i = 0; i <nodes.length; i++) {    //adding labels to graph
@@ -274,12 +359,16 @@ public class Graph extends JFrame {
             }
 
             //read edges
+            int i=0;
             while(s.hasNext()) {
                 try {
                     int n1 = nameIndex(s.next()); // start node
+                    //edges[i].n1 = nodes[n1];
                     int n2 = nameIndex(s.next()); // end node
+                    //edges[i].n2 = nodes[n2];
                     nodes[n1].adjList = new Neighbor(n2, nodes[n1].adjList);
                     nodes[n2].adjList = new Neighbor(n1, nodes[n2].adjList);
+                    i++;
                 } catch (Exception e){          //in case of number of nodes are not equal to number of elements stated in the text file
                     System.out.println("exception occurred");}
             }
@@ -294,6 +383,37 @@ public class Graph extends JFrame {
             }
             return -1;
         }
+
+    }
+
+    class Edge{
+        private Node n1;
+        private Node n2;
+        int sxaxis;
+        int syaxis;
+        int dxaxis;
+        int dyaxis;
+
+        Edge(int sx, int sy,int dx,int dy){
+            this.sxaxis = sx;
+            this.syaxis = sy;
+            this.dxaxis = dx;
+            this.dyaxis = dy;
+        }
+
+        Edge()
+        {
+            this.sxaxis = 0;
+            this.syaxis = 0;
+            this.dxaxis = 0;
+            this.dyaxis = 0;
+            this.n1 = null;
+            this.n2 = null;
+        }
+
+    }
+
+    class topLabel{
 
     }
 

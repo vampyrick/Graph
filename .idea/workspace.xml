@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="976e109f-1058-4a6a-94b8-2c4534993b6c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$1.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$GraphLoader.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$GraphLoader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$Neighbor.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$Neighbor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$Node.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$Node.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$surface.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$surface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graph.java" afterPath="$PROJECT_DIR$/src/Graph.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,21 +24,24 @@
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="173" column="44" lean-forward="true" selection-start-line="173" selection-start-column="44" selection-end-line="173" selection-end-column="44" />
+            <state relative-caret-position="16">
+              <caret line="217" column="15" lean-forward="false" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="15" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#initUI#0;class#Graph#0" expanded="false" />
                 <element signature="method#main#0;class#Graph#0" expanded="false" />
                 <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
                 <element signature="method#Graph#0;class#Graph#0" expanded="false" />
                 <element signature="class#Node#0;class#Graph#0" expanded="false" />
                 <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-                <element signature="method#mousePressed#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
-                <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -51,19 +59,34 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>this</find>
-      <find>main</find>
-      <find>nodes</find>
-      <find>surface</find>
       <find>5</find>
       <find>test</find>
-      <find>print</find>
       <find>random</find>
       <find>node</find>
+      <find>line</find>
+      <find>main</find>
+      <find>nodes</find>
+      <find>num_nodes</find>
+      <find>edge</find>
+      <find>print</find>
+      <find>distance</find>
+      <find>getdistance</find>
+      <find>Jpanel</find>
+      <find>color</find>
+      <find>orag</find>
+      <find>paint</find>
+      <find>mouse</find>
+      <find>compo</find>
+      <find>surface</find>
+      <find>n1</find>
+      <find>drawline</find>
+      <find>edges</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="vampyrick &lt;hamzah.jav@gmail.com&gt;" />
         <option value="vampyrick" />
       </list>
     </option>
@@ -112,6 +135,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -128,10 +155,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,7 +290,10 @@
       <option name="presentableId" value="Default" />
       <updated>1506956965120</updated>
       <workItem from="1506956968662" duration="3397000" />
-      <workItem from="1506962862868" duration="7426000" />
+      <workItem from="1506962862868" duration="9059000" />
+      <workItem from="1507307518967" duration="5941000" />
+      <workItem from="1507314664798" duration="5444000" />
+      <workItem from="1507380223476" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="Firt merger commit">
       <created>1506959797906</created>
@@ -283,11 +309,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506970835481</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="edges etc centered. now only buttons to create">
+      <created>1506971041304</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1506971041304</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10823000" />
+    <option name="totallyTimeSpent" value="23858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
@@ -295,14 +328,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33225107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -312,12 +344,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33118972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -335,7 +368,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -345,18 +378,93 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#main#0;class#Graph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
+            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
+            <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
+            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#main#0;class#Graph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
+            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
+            <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
+            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#main#0;class#Graph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
+            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
+            <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
+            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -375,47 +483,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/GraphDraw-1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/GraphDraw-1.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/COPY_PASTE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NEW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/COPY_PASTE" />
+    <entry file="file://$PROJECT_DIR$/src/NEW.java" />
     <entry file="file://$PROJECT_DIR$/src/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="173" column="44" lean-forward="true" selection-start-line="173" selection-start-column="44" selection-end-line="173" selection-end-column="44" />
+        <state relative-caret-position="16">
+          <caret line="217" column="15" lean-forward="false" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="15" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -19,29 +19,33 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Graph$Main.coverage" NAME="Main Coverage Results" MODIFIED="1507656026926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="217" column="15" lean-forward="false" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="15" />
+            <state relative-caret-position="1989">
+              <caret line="280" column="32" lean-forward="false" selection-start-line="280" selection-start-column="32" selection-end-line="280" selection-end-column="32" />
               <folding>
+                <element signature="method#initUI#0;class#Graph#0" expanded="false" />
                 <element signature="method#main#0;class#Graph#0" expanded="false" />
                 <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
                 <element signature="method#Graph#0;class#Graph#0" expanded="false" />
-                <element signature="class#Node#0;class#Graph#0" expanded="false" />
                 <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-                <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
-                <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
-                <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
-                <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
-                <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+                <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+                <element signature="class#Edge#0;class#Graph#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -58,29 +62,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this</find>
-      <find>5</find>
-      <find>test</find>
-      <find>random</find>
-      <find>node</find>
-      <find>line</find>
-      <find>main</find>
-      <find>nodes</find>
-      <find>num_nodes</find>
-      <find>edge</find>
-      <find>print</find>
       <find>distance</find>
       <find>getdistance</find>
       <find>Jpanel</find>
       <find>color</find>
       <find>orag</find>
-      <find>paint</find>
       <find>mouse</find>
       <find>compo</find>
       <find>surface</find>
       <find>n1</find>
       <find>drawline</find>
       <find>edges</find>
+      <find>edge</find>
+      <find>rectanglepressed</find>
+      <find>nodes</find>
+      <find>paint</find>
+      <find>myrect</find>
+      <find>selected</find>
+      <find>dragging =</find>
+      <find>x1</find>
+      <find>myrec</find>
+      <find>myrect1</find>
+      <find>x3</find>
+      <find>node</find>
+      <find>Node</find>
+      <find>labelselected</find>
+      <find>endX</find>
+      <find>dragging =</find>
+      <find>dragging</find>
+      <find>dragging2</find>
+      <find>line</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,8 +124,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
     <option name="y" value="30" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
@@ -135,10 +146,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -293,7 +304,10 @@
       <workItem from="1506962862868" duration="9059000" />
       <workItem from="1507307518967" duration="5941000" />
       <workItem from="1507314664798" duration="5444000" />
-      <workItem from="1507380223476" duration="17000" />
+      <workItem from="1507380223476" duration="5474000" />
+      <workItem from="1507392082061" duration="175000" />
+      <workItem from="1507393588399" duration="175000" />
+      <workItem from="1507647488895" duration="12328000" />
     </task>
     <task id="LOCAL-00001" summary="Firt merger commit">
       <created>1506959797906</created>
@@ -316,41 +330,49 @@
       <option name="project" value="LOCAL" />
       <updated>1506971041304</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit before reading the books">
+      <created>1507380273255</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1507380273255</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23858000" />
+    <option name="totallyTimeSpent" value="41993000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
+    <frame x="-7" y="30" width="974" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33116883" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.072916664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0960334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33118972" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -364,11 +386,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Firt merger commit" />
     <MESSAGE value="edges etc centered. now only buttons to create" />
-    <option name="LAST_COMMIT_MESSAGE" value="edges etc centered. now only buttons to create" />
+    <MESSAGE value="commit before reading the books" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit before reading the books" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -378,21 +401,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+            <element signature="class#Edge#0;class#Graph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -402,21 +426,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+            <element signature="class#Edge#0;class#Graph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -426,21 +451,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+            <element signature="class#Edge#0;class#Graph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -450,21 +476,72 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+            <element signature="class#Edge#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
+            <element signature="method#main#0;class#Graph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
+            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
+            <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+            <element signature="class#Edge#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
+            <element signature="method#main#0;class#Graph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
+            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
+            <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+            <element signature="class#Edge#0;class#Graph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -487,26 +564,35 @@
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/COPY_PASTE" />
     <entry file="file://$PROJECT_DIR$/src/NEW.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/awt/geom/RectangularShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="65" column="27" lean-forward="false" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="217" column="15" lean-forward="false" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="15" />
+        <state relative-caret-position="1989">
+          <caret line="280" column="32" lean-forward="false" selection-start-line="280" selection-start-column="32" selection-end-line="280" selection-end-column="32" />
           <folding>
+            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
             <element signature="method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
-            <element signature="method#surface#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#doDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseReleased#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseEntered#0;class#surface#0;class#Graph#0" expanded="false" />
-            <element signature="method#mouseExited#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+            <element signature="class#Edge#0;class#Graph#0" expanded="false" />
           </folding>
         </state>
       </provider>

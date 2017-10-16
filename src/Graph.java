@@ -22,10 +22,8 @@ public class Graph extends JFrame {
     Edge[] edges;
     private int mX = 0;
     private int mY = 0;
-    JPanel jp;
 
     boolean rectanglePressed = false;
-
 
 
     private void initUI() {                  //initializing the User Interface
@@ -137,7 +135,7 @@ public class Graph extends JFrame {
         }
     }
 
-    class surface extends JPanel implements MouseListener, MouseMotionListener {
+    class surface extends JPanel implements MouseListener, MouseMotionListener {    //most of UI implemented in surface class
         private int mStartX, mStartY;   //for last mouse position
         private boolean selected = false;
         boolean dragging = false;
@@ -152,6 +150,7 @@ public class Graph extends JFrame {
         BasicStroke s5;
         private final int ARR_SIZE = 5;
         boolean dragging2 = false;
+        int DrawOnce = 0;
 
         public surface() {
             addMouseListener(this);
@@ -190,6 +189,7 @@ public class Graph extends JFrame {
             for (int i = 0; i < nodes.length; i++) {    //printing nodes values
                 g2d.draw(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 20, 20));
             }
+            DrawOnce = 1;
         }
 
         private void edgeDrawing(Graphics g) {
@@ -225,7 +225,7 @@ public class Graph extends JFrame {
             for (int i = 0; i < nodes.length; i++) {
                 if ( nodes[i].selected ) {
                     g2d.fill(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 22, 22));    //code for the selected node goes here
-                    g2d.drawString(nodes[i].label, nodes[i].return_xaxis() - 15, nodes[i].return_yaxis() + 35);
+                    //g2d.drawString(nodes[i].label, nodes[i].return_xaxis() - 15, nodes[i].return_yaxis() + 35);
                     nodes[i].selected = false;    //to unselected the first node
                 } else {
                     g2d.draw(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 20, 20));
@@ -260,11 +260,17 @@ public class Graph extends JFrame {
         }
 
         public void lineDrawing(Graphics g){
+            Graphics2D g2d = (Graphics2D) g;
             for(int i=0;i<nodes.length;i++){
                 if(nodes[i].labelselected){
-                    getAngle(nodes[i].nxaxis,nodes[i].nyaxis,45,90);
-                    drawArrow(g,nodes[i].nxaxis,nodes[i].nyaxis,endX,endY);
-                    nodes[i].labelselected=false;
+                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,45,90);                    drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,90,90);                    drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,135,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,180,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,360,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                    g2d.drawString("A", nodes[i].return_xaxis() - 3, nodes[i].return_yaxis() + 35);
+                    g2d.fill(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 22, 22));    //code for the selected node goes here
+                    //nodes[i].labelselected = false;
                 }
             }
         }
@@ -272,9 +278,9 @@ public class Graph extends JFrame {
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-            if ( !selected )   //meaning only called once
+            if ( DrawOnce == 0 )   //meaning only called once
                 doDrawing(g);
-            selectDrawing(g);
+            //selectDrawing(g);
             edgeDrawing(g);
             Edgeremoving(g);
             topDrawing(g);
@@ -406,97 +412,98 @@ public class Graph extends JFrame {
         }
     }
 
-        class GraphLoader {
+    class GraphLoader {
 
-            private JFileChooser chooser = new JFileChooser();
-            private File selected_file = null;
-            private String label = null;
+        private JFileChooser chooser = new JFileChooser();
+        private File selected_file = null;
+        private String label = null;
 
-            public GraphLoader() {
-                FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                        "Text File", "txt");
-                chooser.setFileFilter(filter);
-                int returnVal = chooser.showOpenDialog(null);
-                if ( returnVal == JFileChooser.APPROVE_OPTION ) {
-                    System.out.println("You chose to open this file: " +
-                            chooser.getSelectedFile().getAbsolutePath());
-                }
-                selected_file = chooser.getSelectedFile();
+        public GraphLoader() {
+            FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                    "Text File", "txt");
+            chooser.setFileFilter(filter);
+            int returnVal = chooser.showOpenDialog(null);
+            if ( returnVal == JFileChooser.APPROVE_OPTION ) {
+                System.out.println("You chose to open this file: " +
+                        chooser.getSelectedFile().getAbsolutePath());
             }
-
-            public File return_selectedfile() {
-                return selected_file;
-            }
-
-            public void read_label() throws FileNotFoundException, ArrayIndexOutOfBoundsException {
-
-                Scanner s = new Scanner(return_selectedfile());
-                num_nodes = s.nextInt();    //saving number of nodes on top of the text file
-                num_edges = s.nextInt();
-
-                s.nextLine();
-
-                nodes = new Node[num_nodes];
-                edges = new Edge[num_edges];
-
-                //read labels
-                for (int i = 0; i < nodes.length; i++) {    //adding labels to graph
-                    nodes[i] = new Node(s.next(), null);
-                    nodes[i].numNodes(num_nodes);
-                }
-
-                //read edges
-                int i = 0;
-                while (s.hasNext()) {
-                    try {
-                        int n1 = nameIndex(s.next()); // start node
-                        //edges[i].n1 = nodes[n1];
-                        int n2 = nameIndex(s.next()); // end node
-                        //edges[i].n2 = nodes[n2];
-                        nodes[n1].adjList = new Neighbor(n2, nodes[n1].adjList);
-                        nodes[n2].adjList = new Neighbor(n1, nodes[n2].adjList);
-                        i++;
-                    } catch (Exception e) {          //in case of number of nodes are not equal to number of elements stated in the text file
-                        System.out.println("exception occurred");
-                    }
-                }
-                System.out.println("You have selected => " + selected_file.getAbsolutePath());
-            }
-
-            int nameIndex(String name) {
-                for (int n = 0; n < nodes.length; n++) {
-                    if ( nodes[n].label.equals(name) ) {
-                        return n;
-                    }
-                }
-                return -1;
-            }
-
+            selected_file = chooser.getSelectedFile();
         }
 
-        class Edge {
-            private Node n1;
-            private Node n2;
-            int sxaxis;
-            int syaxis;
-            int dxaxis;
-            int dyaxis;
-
-            Edge(int sx, int sy, int dx, int dy) {
-                this.sxaxis = sx;
-                this.syaxis = sy;
-                this.dxaxis = dx;
-                this.dyaxis = dy;
-            }
-
-            Edge() {
-                this.sxaxis = 0;
-                this.syaxis = 0;
-                this.dxaxis = 0;
-                this.dyaxis = 0;
-                this.n1 = null;
-                this.n2 = null;
-            }
-
+        public File return_selectedfile() {
+            return selected_file;
         }
+
+        public void read_label() throws FileNotFoundException, ArrayIndexOutOfBoundsException {
+
+            Scanner s = new Scanner(return_selectedfile());
+            num_nodes = s.nextInt();    //saving number of nodes on top of the text file
+            num_edges = s.nextInt();
+
+            s.nextLine();
+
+            nodes = new Node[num_nodes];
+            edges = new Edge[num_edges];
+
+            //read labels
+            for (int i = 0; i < nodes.length; i++) {    //adding labels to graph
+                nodes[i] = new Node(s.next(), null);
+                nodes[i].numNodes(num_nodes);
+            }
+
+            //read edges
+            int i = 0;
+            while (s.hasNext()) {
+                try {
+                    int n1 = nameIndex(s.next()); // start node
+                    //edges[i].n1 = nodes[n1];
+                    int n2 = nameIndex(s.next()); // end node
+                    //edges[i].n2 = nodes[n2];
+                    nodes[n1].adjList = new Neighbor(n2, nodes[n1].adjList);
+                    nodes[n2].adjList = new Neighbor(n1, nodes[n2].adjList);
+                    i++;
+                } catch (Exception e) {          //in case of number of nodes are not equal to number of elements stated in the text file
+                    System.out.println("exception occurred");
+                }
+            }
+            System.out.println("You have selected => " + selected_file.getAbsolutePath());
+        }
+
+        int nameIndex(String name) {
+            for (int n = 0; n < nodes.length; n++) {
+                if ( nodes[n].label.equals(name) ) {
+                    return n;
+                }
+            }
+            return -1;
+        }
+
     }
+
+    class Edge {
+        private Node n1;
+        private Node n2;
+        int sxaxis;
+        int syaxis;
+        int dxaxis;
+        int dyaxis;
+
+        Edge(int sx, int sy, int dx, int dy) {
+            this.sxaxis = sx;
+            this.syaxis = sy;
+            this.dxaxis = dx;
+            this.dyaxis = dy;
+        }
+
+        Edge() {
+            this.sxaxis = 0;
+            this.syaxis = 0;
+            this.dxaxis = 0;
+            this.dyaxis = 0;
+            this.n1 = null;
+            this.n2 = null;
+        }
+
+    }
+}
+

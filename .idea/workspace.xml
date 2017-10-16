@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="976e109f-1058-4a6a-94b8-2c4534993b6c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$1.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$GraphLoader.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$GraphLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$Neighbor.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$Neighbor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$Node.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph$surface.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph$surface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Graph/Graph.class" afterPath="$PROJECT_DIR$/out/production/Graph/Graph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graph.java" afterPath="$PROJECT_DIR$/src/Graph.java" />
     </list>
@@ -23,17 +17,17 @@
     <SUITE FILE_PATH="coverage/Graph$Main.coverage" NAME="Main Coverage Results" MODIFIED="1507656026926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1989">
-              <caret line="280" column="32" lean-forward="false" selection-start-line="280" selection-start-column="32" selection-end-line="280" selection-end-column="32" />
+            <state relative-caret-position="263">
+              <caret line="269" column="70" lean-forward="false" selection-start-line="269" selection-start-column="70" selection-end-line="269" selection-end-column="70" />
               <folding>
                 <element signature="method#initUI#0;class#Graph#0" expanded="false" />
                 <element signature="method#main#0;class#Graph#0" expanded="false" />
                 <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
-                <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+                <element signature="class#Node#0;class#Graph#0" expanded="false" />
                 <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
                 <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
                 <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
@@ -62,14 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>distance</find>
-      <find>getdistance</find>
-      <find>Jpanel</find>
-      <find>color</find>
-      <find>orag</find>
-      <find>mouse</find>
-      <find>compo</find>
-      <find>surface</find>
       <find>n1</find>
       <find>drawline</find>
       <find>edges</find>
@@ -78,7 +64,6 @@
       <find>nodes</find>
       <find>paint</find>
       <find>myrect</find>
-      <find>selected</find>
       <find>dragging =</find>
       <find>x1</find>
       <find>myrec</find>
@@ -86,12 +71,21 @@
       <find>x3</find>
       <find>node</find>
       <find>Node</find>
-      <find>labelselected</find>
       <find>endX</find>
-      <find>dragging =</find>
       <find>dragging</find>
       <find>dragging2</find>
+      <find>labelselected</find>
+      <find>ellipse</find>
+      <find>20</find>
       <find>line</find>
+      <find>label</find>
+      <find>selectD</find>
+      <find>drawS</find>
+      <find>selectDraw</find>
+      <find>doDrawing</find>
+      <find>selected</find>
+      <find>selected = true</find>
+      <find>DrawOnce</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,8 +118,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
     <option name="y" value="30" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
@@ -146,9 +140,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -166,6 +159,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,7 +301,8 @@
       <workItem from="1507380223476" duration="5474000" />
       <workItem from="1507392082061" duration="175000" />
       <workItem from="1507393588399" duration="175000" />
-      <workItem from="1507647488895" duration="12328000" />
+      <workItem from="1507647488895" duration="12428000" />
+      <workItem from="1508167866572" duration="3520000" />
     </task>
     <task id="LOCAL-00001" summary="Firt merger commit">
       <created>1506959797906</created>
@@ -337,14 +332,21 @@
       <option name="project" value="LOCAL" />
       <updated>1507380273255</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Check for dragging completed in the main code !&#10;TODO ADD lines and labels at different angles">
+      <created>1507662411797</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1507662411797</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41993000" />
+    <option name="totallyTimeSpent" value="45613000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="30" width="974" height="1057" extended-state="0" />
+    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -355,25 +357,25 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32690248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0960334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18489583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -387,7 +389,8 @@
     <MESSAGE value="Firt merger commit" />
     <MESSAGE value="edges etc centered. now only buttons to create" />
     <MESSAGE value="commit before reading the books" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit before reading the books" />
+    <MESSAGE value="Check for dragging completed in the main code !&#10;TODO ADD lines and labels at different angles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check for dragging completed in the main code !&#10;TODO ADD lines and labels at different angles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -404,7 +407,7 @@
             <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
@@ -429,7 +432,7 @@
             <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
@@ -454,7 +457,7 @@
             <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
@@ -479,7 +482,7 @@
             <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
@@ -504,7 +507,7 @@
             <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
@@ -529,7 +532,32 @@
             <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
+            <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
+            <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#Edgeremoving#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#selectDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#topDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getAngle#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistanceEdge#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#getDistance#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="method#mouseMoved#0;class#surface#0;class#Graph#0" expanded="false" />
+            <element signature="class#GraphLoader#0;class#Graph#0" expanded="false" />
+            <element signature="class#Edge#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#initUI#0;class#Graph#0" expanded="false" />
+            <element signature="method#main#0;class#Graph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />
@@ -568,19 +596,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="65" column="27" lean-forward="false" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="280" column="32" lean-forward="false" selection-start-line="280" selection-start-column="32" selection-end-line="280" selection-end-column="32" />
+        <state relative-caret-position="263">
+          <caret line="269" column="70" lean-forward="false" selection-start-line="269" selection-start-column="70" selection-end-line="269" selection-end-column="70" />
           <folding>
             <element signature="method#initUI#0;class#Graph#0" expanded="false" />
             <element signature="method#main#0;class#Graph#0" expanded="false" />
             <element signature="method#printGraph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
+            <element signature="class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Neighbor#0;class#Graph#0" expanded="false" />
             <element signature="method#nodeFilling#0;class#surface#0;class#Graph#0" expanded="false" />
             <element signature="method#edgeDrawing#0;class#surface#0;class#Graph#0" expanded="false" />

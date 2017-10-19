@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class Graph extends JFrame {
     private int num_nodes = 0;
-    Node[] nodes;  //global nodes
+    Node[] nodes;
     private int num_edges = 0;
     Edge[] edges;
     private int mX = 0;
@@ -144,13 +144,11 @@ public class Graph extends JFrame {
         boolean ellipse = true;
         boolean selected1 = false;
         boolean line = false;
-        int indexofLabel;
         Shape myRect1;
         int endX=0,endY=0;
         BasicStroke s5;
         private final int ARR_SIZE = 5;
         boolean dragging2 = false;
-        int DrawOnce = 0;
 
         public surface() {
             addMouseListener(this);
@@ -185,11 +183,9 @@ public class Graph extends JFrame {
             Graphics2D g2d = (Graphics2D) g;
             g2d.setPaint(Color.RED);
             nodeFilling();  //separate method for checking equal distribution of nodes on the canvas
-
             for (int i = 0; i < nodes.length; i++) {    //printing nodes values
                 g2d.draw(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 20, 20));
             }
-            DrawOnce = 1;
         }
 
         private void edgeDrawing(Graphics g) {
@@ -225,12 +221,13 @@ public class Graph extends JFrame {
             for (int i = 0; i < nodes.length; i++) {
                 if ( nodes[i].selected ) {
                     g2d.fill(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 22, 22));    //code for the selected node goes here
-                    //g2d.drawString(nodes[i].label, nodes[i].return_xaxis() - 15, nodes[i].return_yaxis() + 35);
+                    g2d.drawString(nodes[i].label, nodes[i].return_xaxis() - 15, nodes[i].return_yaxis() + 35);
                     nodes[i].selected = false;    //to unselected the first node
                 } else {
                     g2d.draw(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 20, 20));
                 }
             }
+            selected = true;
         }
 
         public void topDrawing(Graphics g) {
@@ -268,9 +265,9 @@ public class Graph extends JFrame {
                     getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,135,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
                     getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,180,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
                     getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,360,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
-                    g2d.drawString("A", nodes[i].return_xaxis() - 3, nodes[i].return_yaxis() + 35);
+                    //g2d.drawString("A", nodes[i].return_xaxis() - 3, nodes[i].return_yaxis() + 35);
                     g2d.fill(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 22, 22));    //code for the selected node goes here
-                    //nodes[i].labelselected = false;
+                    nodes[i].labelselected = false;
                 }
             }
         }
@@ -278,9 +275,9 @@ public class Graph extends JFrame {
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-            if ( DrawOnce == 0 )   //meaning only called once
+            if(!selected)
                 doDrawing(g);
-            //selectDrawing(g);
+            selectDrawing(g);
             edgeDrawing(g);
             Edgeremoving(g);
             topDrawing(g);
@@ -346,35 +343,35 @@ public class Graph extends JFrame {
             int d2;
             for (int i = 0; i < nodes.length; i++) {
                 d2 = getDistance(nodes[i].return_xaxis(), nodes[i].return_yaxis(), mX, mY);
-                if ( d2 <= 30 ) {                    //distance between the mouse clicked pointer and the center of the circle
+                if ( d2 <= 20 ) {                    //distance between the mouse clicked pointer and the center of the circle
                     nodes[i].selected = true;
                     selected = true;
                     break;
                 } else
-                    nodes[i].selected = false;
+                   nodes[i].selected = false;
             }
             repaint();
         }
 
         @Override
         public void mousePressed(MouseEvent e) {
-            x3 = 23;
+            /*x3 = 23;
             y3 = 15;
             dragging2 = false;
             if ( myRect1.contains(e.getX(), e.getY())){ /*&& myRect2.contains(prex, prey) && myRect3.contains(prex, prey) && myRect4.contains(prex, prey) && myRect5.contains(prex, prey)
                     && myRect6.contains(prex, prey) && myRect7.contains(prex, prey) && myRect8.contains(prex, prey)*/   //too many internal calls error !!
-                offsetX = e.getX() - x3;
+            /*    offsetX = e.getX() - x3;
                 offsetY = e.getY() - y3;
                 dragging = false;
                 dragging2 = true;
                 System.out.println("Mouse pressed inside the rectangle");
                 repaint();
-            }
+            }*/
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            dragging = true;
+            /*dragging = true;
             line = false;
             int d3;
             for (int i = 0; i < nodes.length; i++) {
@@ -387,7 +384,7 @@ public class Graph extends JFrame {
                     break;
                 }
             }
-            repaint();
+            repaint();*/
         }
 
         @Override
@@ -402,9 +399,9 @@ public class Graph extends JFrame {
 
         @Override
         public void mouseDragged(MouseEvent e) {
-            x3 = e.getX() - offsetX;
+         /*   x3 = e.getX() - offsetX;
             y3 = e.getY() - offsetY;
-            repaint();
+            repaint();*/
         }
 
         @Override

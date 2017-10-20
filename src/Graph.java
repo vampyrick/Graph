@@ -1,5 +1,8 @@
 
+import com.sun.javafx.geom.Edge;
 import javafx.stage.Stage;
+
+import javax.sound.sampled.Line;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
@@ -8,19 +11,26 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
+import static java.awt.Color.BLACK;
+import static java.awt.Color.GREEN;
 import static java.awt.SystemColor.window;
 
 public class Graph extends JFrame {
     private int num_nodes = 0;
     Node[] nodes;
     private int num_edges = 0;
-    Edge[] edges;
+    //Edge[] edges;
+    ArrayList<Edge> edges=new ArrayList<Edge>();
+    ArrayList<Line2D> edges_line = new ArrayList<>();
     private int mX = 0;
     private int mY = 0;
 
@@ -148,6 +158,8 @@ public class Graph extends JFrame {
         int endX=0,endY=0;
         BasicStroke s5;
         private final int ARR_SIZE = 5;
+        private static final int BOX_SIZE = 4;
+
 
         public surface() {
             addMouseListener(this);
@@ -169,6 +181,7 @@ public class Graph extends JFrame {
                     distance = getDistance(nodes[j].return_xaxis(), nodes[j].return_yaxis(), nodes[i].return_xaxis(), nodes[i].return_yaxis());
                     if ( distance > 100 && distance < 500 ) {   //if you want to cater for more nodes increase the bracket for distance
                         // means node will be added to the list and wont go to the else part of the loop
+
                     } else {
                         //means distance condition is false and therefore the node is overwritten.
                         i--;
@@ -178,10 +191,21 @@ public class Graph extends JFrame {
             }
         }
 
+        private void edgeFilling(){
+            for (int v = 0; v < nodes.length; v++) {
+                for (Neighbor nbr = nodes[v].adjList; nbr != null; nbr = nbr.next) {
+                    edges_line.add(new Line2D.Double(nodes[v].return_xaxis() + 11, nodes[v].return_yaxis() + 11, nodes[nbr.nodeNum].return_xaxis() + 11, nodes[nbr.nodeNum].return_yaxis() + 11));
+                    edges.add(new Edge(nodes[v].return_xaxis() + 11, nodes[v].return_yaxis() + 11, nodes[nbr.nodeNum].return_xaxis() + 11, nodes[nbr.nodeNum].return_yaxis() + 11));
+                }
+            }
+
+        }
+
         private void doDrawing(Graphics g) {        //Separate method for drawing graphics object override
             Graphics2D g2d = (Graphics2D) g;
             g2d.setPaint(Color.RED);
             nodeFilling();  //separate method for checking equal distribution of nodes on the canvas
+            edgeFilling();
             for (int i = 0; i < nodes.length; i++) {    //printing nodes values
                 g2d.draw(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 20, 20));
             }
@@ -189,12 +213,22 @@ public class Graph extends JFrame {
 
         private void edgeDrawing(Graphics g) {
             Graphics2D g2d = (Graphics2D) g;
-            g2d.setPaint(Color.RED);
+            g2d.setPaint(BLACK);
+            for(Line2D line:edges_line){
+                g2d.draw(line);
+            }
+            //edgeFilling();
+            /*for(Edge obj:edges){
+                g2d.draw(obj.edge);
+            }
+            /*Graphics2D g2d = (Graphics2D) g;
+            g2d.setPaint(Color.BLUE);
             for (int v = 0; v < nodes.length; v++) {
                 for (Neighbor nbr = nodes[v].adjList; nbr != null; nbr = nbr.next) {
+                    edges_line.add(new Line2D.Double(nodes[v].return_xaxis() + 11, nodes[v].return_yaxis() + 11, nodes[nbr.nodeNum].return_xaxis() + 11, nodes[nbr.nodeNum].return_yaxis() + 11));
                     g2d.drawLine(nodes[v].return_xaxis() + 11, nodes[v].return_yaxis() + 11, nodes[nbr.nodeNum].return_xaxis() + 11, nodes[nbr.nodeNum].return_yaxis() + 11);//half of width and height of ellipse will center the lines
                 }
-            }
+            }*/
         }
 
         private void Edgeremoving(Graphics g) {
@@ -203,7 +237,7 @@ public class Graph extends JFrame {
             for (int v = 0; v < nodes.length; v++) {
                 for (Neighbor nbr = nodes[v].adjList; nbr != null; nbr = nbr.next) {
                     if ( (getDistanceEdge(nodes[v].return_xaxis(), nodes[v].return_yaxis(), nodes[nbr.nodeNum].return_xaxis(), nodes[nbr.nodeNum].return_yaxis(), mX, mY)) < 10 ) {
-                        //System.out.println("Edge selected");
+                        System.out.println("Edge selected");
                         break;
                     }
                     //System.out.println("Edge not selected");
@@ -285,11 +319,11 @@ public class Graph extends JFrame {
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-            if(!selected)
+            if(!selected)//drawing graph only once
                 doDrawing(g);
             selectDrawing(g);
             edgeDrawing(g);
-            Edgeremoving(g);
+            //Edgeremoving(g);
             topDrawing(g);
             lineDrawing(g);
         }
@@ -357,15 +391,46 @@ public class Graph extends JFrame {
                     selected = true;
                     nodes[i].labelselected = true;
                     alertBox(i);
+                    repaint();
                     break;
                 } else
                    nodes[i].selected = false;
             }
-            repaint();
+            getSelectedLine(e.getX(),e.getY());
+            //repaint();
+        }
+
+        private Shape getSelectedLine(int x,int y){
+            int boxX = x - BOX_SIZE / 2;
+            int boxY = y - BOX_SIZE / 2;
+
+            int w = BOX_SIZE;
+            int h = BOX_SIZE;
+
+            for (Line2D selectedLine:edges_line){
+                if(selectedLine.intersects(boxX,boxY,w,h)){
+                    System.out.println("line selected / intersects");
+                    removeEdge(selectedLine);
+                    return selectedLine;
+                }
+
+            }
+            return null;
+        }
+
+        private void removeEdge(Line2D line){
+            Iterator<Line2D> it = edges_line.iterator();
+            while(it.hasNext()){
+                Line2D selectedLine = it.next();
+                if(selectedLine.equals(line)){
+                    it.remove();
+                    repaint();
+                }
+            }
+
         }
 
         public void alertBox(int index){
-
             Object[] possibilities = {"45", "135", "225","315"};
             String s = (String)JOptionPane.showInputDialog(
                     null,
@@ -390,29 +455,26 @@ public class Graph extends JFrame {
         public void mousePressed(MouseEvent e) {
             /*x3 = 23;
             y3 = 15;
-            dragging2 = false;
             if ( myRect1.contains(e.getX(), e.getY())){ /*&& myRect2.contains(prex, prey) && myRect3.contains(prex, prey) && myRect4.contains(prex, prey) && myRect5.contains(prex, prey)
-                    && myRect6.contains(prex, prey) && myRect7.contains(prex, prey) && myRect8.contains(prex, prey)*/   //too many internal calls error !!
-            /*    offsetX = e.getX() - x3;
+                    && myRect6.contains(prex, prey) && myRect7.contains(prex, prey) && myRect8.contains(prex, prey)   too many internal calls error !!
+                offsetX = e.getX() - x3;
                 offsetY = e.getY() - y3;
                 dragging = false;
-                dragging2 = true;
                 System.out.println("Mouse pressed inside the rectangle");
                 repaint();
             }*/
         }
 
         @Override
-        public void mouseReleased(MouseEvent e) {
-            /*dragging = true;
+        public void mouseReleased(MouseEvent e) {/*
+            dragging = true;
             line = false;
             int d3;
             for (int i = 0; i < nodes.length; i++) {
                 d3 = getDistance(nodes[i].return_xaxis(), nodes[i].return_yaxis(), e.getX(), e.getY());
                 if ( d3 <= 30 ) {//distance between the mouse clicked pointer and the center of the circle
-                    indexofLabel = i;
                     selected = true;
-                    nodes[i].labelselected = true;
+                    //nodes[i].labelselected = true;
                     line = true;
                     break;
                 }
@@ -431,8 +493,8 @@ public class Graph extends JFrame {
         }
 
         @Override
-        public void mouseDragged(MouseEvent e) {
-         /*   x3 = e.getX() - offsetX;
+        public void mouseDragged(MouseEvent e) {/*
+            x3 = e.getX() - offsetX;
             y3 = e.getY() - offsetY;
             repaint();*/
         }
@@ -473,7 +535,7 @@ public class Graph extends JFrame {
             s.nextLine();
 
             nodes = new Node[num_nodes];
-            edges = new Edge[num_edges];
+            //edges = new Edge[num_edges];
 
             //read labels
             for (int i = 0; i < nodes.length; i++) {    //adding labels to graph
@@ -486,8 +548,10 @@ public class Graph extends JFrame {
             while (s.hasNext()) {
                 try {
                     int n1 = nameIndex(s.next()); // start node
+                    //edges.get(i).n1=nodes[n1];
                     //edges[i].n1 = nodes[n1];
                     int n2 = nameIndex(s.next()); // end node
+                    //edges.get(i).n2=nodes[n2];
                     //edges[i].n2 = nodes[n2];
                     nodes[n1].adjList = new Neighbor(n2, nodes[n1].adjList);
                     nodes[n2].adjList = new Neighbor(n1, nodes[n2].adjList);
@@ -513,6 +577,7 @@ public class Graph extends JFrame {
     class Edge {
         private Node n1;
         private Node n2;
+        Line2D edge;
         int sxaxis;
         int syaxis;
         int dxaxis;
@@ -523,6 +588,8 @@ public class Graph extends JFrame {
             this.syaxis = sy;
             this.dxaxis = dx;
             this.dyaxis = dy;
+            edge = new Line2D.Double();
+            edge.setLine(sxaxis,syaxis,dxaxis,dyaxis);
         }
 
         Edge() {
@@ -532,6 +599,12 @@ public class Graph extends JFrame {
             this.dyaxis = 0;
             this.n1 = null;
             this.n2 = null;
+            edge = new Line2D.Double();
+            edge.setLine(sxaxis,syaxis,dxaxis,dyaxis);
+        }
+
+        void createEdge(int sX, int sY, int dX, int dY){
+            edge.setLine(sX,sY,dX,dY);
         }
 
     }

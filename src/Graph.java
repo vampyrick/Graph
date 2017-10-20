@@ -1,6 +1,5 @@
-import javafx.scene.shape.Ellipse;
-import javafx.scene.shape.Rectangle;
 
+import javafx.stage.Stage;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
@@ -15,6 +14,8 @@ import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
+import static java.awt.SystemColor.window;
+
 public class Graph extends JFrame {
     private int num_nodes = 0;
     Node[] nodes;
@@ -22,8 +23,6 @@ public class Graph extends JFrame {
     Edge[] edges;
     private int mX = 0;
     private int mY = 0;
-
-    boolean rectanglePressed = false;
 
 
     private void initUI() {                  //initializing the User Interface
@@ -81,6 +80,7 @@ public class Graph extends JFrame {
         Neighbor adjList;
         boolean selected;
         public Shape shape = new Ellipse2D.Double(nxaxis,nyaxis,20,20);
+        boolean a_45,a_135,a_225,a_315;
 
         Node() {
             this.nyaxis = 0;
@@ -148,7 +148,6 @@ public class Graph extends JFrame {
         int endX=0,endY=0;
         BasicStroke s5;
         private final int ARR_SIZE = 5;
-        boolean dragging2 = false;
 
         public surface() {
             addMouseListener(this);
@@ -260,11 +259,22 @@ public class Graph extends JFrame {
             Graphics2D g2d = (Graphics2D) g;
             for(int i=0;i<nodes.length;i++){
                 if(nodes[i].labelselected){
-                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,45,90);                    drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
-                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,90,90);                    drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
-                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,135,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
-                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,180,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
-                    getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,360,90);                   drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                    if(nodes[i].a_45) {
+                        getAngle(nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, 45 + 270, 90);
+                        drawArrow(g, nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, endX, endY);
+                    }
+                    if(nodes[i].a_135) {
+                        getAngle(nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, 135+270, 90);
+                        drawArrow(g, nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, endX, endY);
+                    }
+                    if(nodes[i].a_225){
+                        getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,225+270,90);
+                        drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                    }
+                    if(nodes[i].a_315){
+                        getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,315+270,90);
+                        drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                    }
                     //g2d.drawString("A", nodes[i].return_xaxis() - 3, nodes[i].return_yaxis() + 35);
                     g2d.fill(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 22, 22));    //code for the selected node goes here
                     nodes[i].labelselected = false;
@@ -281,8 +291,7 @@ public class Graph extends JFrame {
             edgeDrawing(g);
             Edgeremoving(g);
             topDrawing(g);
-            if(line && dragging2)
-                lineDrawing(g);
+            lineDrawing(g);
         }
 
 
@@ -346,11 +355,35 @@ public class Graph extends JFrame {
                 if ( d2 <= 20 ) {                    //distance between the mouse clicked pointer and the center of the circle
                     nodes[i].selected = true;
                     selected = true;
+                    nodes[i].labelselected = true;
+                    alertBox(i);
                     break;
                 } else
                    nodes[i].selected = false;
             }
             repaint();
+        }
+
+        public void alertBox(int index){
+
+            Object[] possibilities = {"45", "135", "225","315"};
+            String s = (String)JOptionPane.showInputDialog(
+                    null,
+                    "Choose an Angle",
+                    "Angle",
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    possibilities,
+                    "45");
+            if ((s != null) && s == "45") {
+                nodes[index].a_45 = true;
+            }else  if ((s != null) && s == "135") {
+                nodes[index].a_135 = true;
+            } else  if ((s != null) && s == "225") {
+                nodes[index].a_225 = true;
+            } else  if ((s != null) && s == "315") {
+                nodes[index].a_315 = true;
+            }
         }
 
         @Override

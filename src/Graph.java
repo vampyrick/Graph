@@ -28,7 +28,7 @@ public class Graph extends JFrame {
     private int num_nodes = 0;
     Node[] nodes;
     private int num_edges = 0;
-    //Edge[] edges;
+
     ArrayList<Edge> edges=new ArrayList<Edge>();
     ArrayList<Line2D> edges_line = new ArrayList<>();
     private int mX = 0;
@@ -154,11 +154,12 @@ public class Graph extends JFrame {
         boolean ellipse = true;
         boolean selected1 = false;
         boolean line = false;
-        Shape myRect1;
+        Shape myRect1;  //rectangle for the first label A
         int endX=0,endY=0;
         BasicStroke s5;
         private final int ARR_SIZE = 5;
         private static final int BOX_SIZE = 4;
+        ArrayList<Line2D> arrowLines = new ArrayList<>();
 
 
         public surface() {
@@ -296,22 +297,26 @@ public class Graph extends JFrame {
                     if(nodes[i].a_45) {
                         getAngle(nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, 45 + 270, 90);
                         drawArrow(g, nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, endX, endY);
+                        arrowLines.add(new Line2D.Double(nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, endX, endY));
                     }
                     if(nodes[i].a_135) {
                         getAngle(nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, 135+270, 90);
                         drawArrow(g, nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, endX, endY);
+                        arrowLines.add(new Line2D.Double(nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, endX, endY));
                     }
                     if(nodes[i].a_225){
                         getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,225+270,90);
                         drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                        arrowLines.add(new Line2D.Double(nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, endX, endY));
                     }
                     if(nodes[i].a_315){
                         getAngle(nodes[i].nxaxis+10,nodes[i].nyaxis+10,315+270,90);
                         drawArrow(g,nodes[i].nxaxis+10,nodes[i].nyaxis+10,endX,endY);
+                        arrowLines.add(new Line2D.Double(nodes[i].nxaxis + 10, nodes[i].nyaxis + 10, endX, endY));
                     }
                     //g2d.drawString("A", nodes[i].return_xaxis() - 3, nodes[i].return_yaxis() + 35);
                     g2d.fill(new Ellipse2D.Double(nodes[i].return_xaxis(), nodes[i].return_yaxis(), 22, 22));    //code for the selected node goes here
-                    nodes[i].labelselected = false;
+                    //nodes[i].labelselected = false;
                 }
             }
         }
@@ -331,6 +336,7 @@ public class Graph extends JFrame {
 
         void drawArrow(Graphics g1, int x1, int y1, int x2, int y2) {
             Graphics2D g = (Graphics2D) g1.create();
+
 
             double dx = x2 - x1, dy = y2 - y1;
             double angle = Math.atan2(dy, dx);
@@ -453,21 +459,31 @@ public class Graph extends JFrame {
 
         @Override
         public void mousePressed(MouseEvent e) {
-            /*x3 = 23;
+            x3 = 23;
             y3 = 15;
-            if ( myRect1.contains(e.getX(), e.getY())){ /*&& myRect2.contains(prex, prey) && myRect3.contains(prex, prey) && myRect4.contains(prex, prey) && myRect5.contains(prex, prey)
-                    && myRect6.contains(prex, prey) && myRect7.contains(prex, prey) && myRect8.contains(prex, prey)   too many internal calls error !!
+            if ( myRect1.contains(e.getX(), e.getY())){ //&& myRect2.contains(prex, prey) && myRect3.contains(prex, prey) && myRect4.contains(prex, prey) && myRect5.contains(prex, prey)
+                    //&& myRect6.contains(prex, prey) && myRect7.contains(prex, prey) && myRect8.contains(prex, prey)   too many internal calls error !!
                 offsetX = e.getX() - x3;
                 offsetY = e.getY() - y3;
                 dragging = false;
                 System.out.println("Mouse pressed inside the rectangle");
-                repaint();
-            }*/
+                //repaint();
+            }
         }
 
         @Override
-        public void mouseReleased(MouseEvent e) {/*
+        public void mouseReleased(MouseEvent e) {
             dragging = true;
+            line = false;
+            //repaint();
+            for(Line2D obj:arrowLines){
+                if(obj.intersects((Rectangle2D)(myRect1))){
+                    System.out.println("Line Intersected with rectangle");
+                    repaint();
+                }
+            }
+
+           /*dragging = true;
             line = false;
             int d3;
             for (int i = 0; i < nodes.length; i++) {
@@ -478,8 +494,8 @@ public class Graph extends JFrame {
                     line = true;
                     break;
                 }
-            }
-            repaint();*/
+            }*/
+
         }
 
         @Override
@@ -493,10 +509,10 @@ public class Graph extends JFrame {
         }
 
         @Override
-        public void mouseDragged(MouseEvent e) {/*
+        public void mouseDragged(MouseEvent e) {
             x3 = e.getX() - offsetX;
             y3 = e.getY() - offsetY;
-            repaint();*/
+            //repaint();
         }
 
         @Override

@@ -154,12 +154,18 @@ public class Graph extends JFrame {
         boolean ellipse = true;
         boolean selected1 = false;
         boolean line = false;
-        Shape myRect1;  //rectangle for the first label A
+        Shape myRect1, myRect2, myRect3, myRect4, myRect5, myRect6, myRect7, myRect8;//rectangle for the first label A
+        //label myRect2;
         int endX=0,endY=0;
         BasicStroke s5;
         private final int ARR_SIZE = 5;
         private static final int BOX_SIZE = 4;
         ArrayList<Line2D> arrowLines = new ArrayList<>();
+        ArrayList<label> labels = new ArrayList<>();
+        boolean mousedragged = false;
+        boolean mousereleased = false;
+        boolean intersects = false;
+        boolean drawstring = false;
 
 
         public surface() {
@@ -274,17 +280,27 @@ public class Graph extends JFrame {
                 myRect1 = new Rectangle2D.Double(23, 15, 22, 13);
                 g2d.draw(myRect1);
             }
-            g.drawString("B", 75, 25);
-            /*myRect2 = new Rectangle(73, 15, 22, 13);
+            /*g.drawString("B", 75, 25);
+            myRect2 = new Rectangle(73, 15, 22, 13);
+            g2d.draw(myRect1);
             g.drawString("C", 125, 25);
+            g2d.draw(myRect1);
             myRect3 = new Rectangle(123, 15, 22, 13);
+            g2d.draw(myRect1);
             g.drawString("D", 175, 25);
+            g2d.draw(myRect1);
             myRect4 = new Rectangle(173, 15, 22, 13);
+            g2d.draw(myRect1);
             g.drawString("F_1", 225, 25);
+            g2d.draw(myRect1);
             myRect5 = new Rectangle(223, 15, 22, 13);
+            g2d.draw(myRect1);
             g.drawString("F_2", 295, 25);
+            g2d.draw(myRect1);
             myRect6 = new Rectangle(293, 15, 22, 13);
+            g2d.draw(myRect1);
             g.drawString("F_3", 365, 25);
+            g2d.draw(myRect1);
             myRect7 = new Rectangle(363, 15, 22, 13);
             g.drawString("F_4", 435, 25);
             myRect8 = new Rectangle(433, 15, 22, 13);*/
@@ -321,6 +337,13 @@ public class Graph extends JFrame {
             }
         }
 
+        public void drawLabel(Graphics g){
+            Graphics2D g2d = (Graphics2D) g;
+            for (label obj:labels)
+                g.drawString(obj.name,obj.x,obj.y);
+            drawstring = false;
+        }
+
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -328,11 +351,139 @@ public class Graph extends JFrame {
                 doDrawing(g);
             selectDrawing(g);
             edgeDrawing(g);
-            //Edgeremoving(g);
             topDrawing(g);
             lineDrawing(g);
+            drawLabel(g);
         }
 
+        @Override
+        public void mouseClicked(MouseEvent e) {    //for node selection
+            mX = e.getX();
+            mY = e.getY();
+            int d2;
+            for (int i = 0; i < nodes.length; i++) {
+                d2 = getDistance(nodes[i].return_xaxis(), nodes[i].return_yaxis(), mX, mY);
+                if ( d2 <= 20 ) {                    //distance between the mouse clicked pointer and the center of the circle
+                    nodes[i].selected = true;
+                    selected = true;
+                    nodes[i].labelselected = true;
+                    alertBox(i);
+                    repaint();
+                    break;
+                } else
+                   nodes[i].selected = false;
+            }
+            getSelectedLine(e.getX(),e.getY());
+            //repaint();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            x3 = 23;
+            y3 = 15;
+            mousereleased = false;
+            if ( myRect1.contains(e.getX(), e.getY())){ //&& myRect2.contains(prex, prey) && myRect3.contains(prex, prey) && myRect4.contains(prex, prey) && myRect5.contains(prex, prey)
+                    //&& myRect6.contains(prex, prey) && myRect7.contains(prex, prey) && myRect8.contains(prex, prey)   too many internal calls error !!
+                offsetX = e.getX() - x3;
+                offsetY = e.getY() - y3;
+                dragging = false;
+                System.out.println("Mouse pressed inside 1");
+                repaint();
+            } else if ( myRect2.contains(e.getX(),e.getY())){
+                offsetX = e.getX() - x3;
+                offsetY = e.getY() - y3;
+                dragging = false;
+                System.out.println("Mouse pressed inside 1");
+                repaint();
+            } else if ( myRect3.contains(e.getX(),e.getY())){
+                offsetX = e.getX() - x3;
+                offsetY = e.getY() - y3;
+                dragging = false;
+                System.out.println("Mouse pressed inside 1");
+                repaint();
+            } else if ( myRect4.contains(e.getX(),e.getY())){
+                offsetX = e.getX() - x3;
+                offsetY = e.getY() - y3;
+                dragging = false;
+                System.out.println("Mouse pressed inside 1");
+                repaint();
+            } else if ( myRect5.contains(e.getX(),e.getY())){
+                offsetX = e.getX() - x3;
+                offsetY = e.getY() - y3;
+                dragging = false;
+                System.out.println("Mouse pressed inside 1");
+                repaint();
+            } else if ( myRect6.contains(e.getX(),e.getY())){
+                offsetX = e.getX() - x3;
+                offsetY = e.getY() - y3;
+                dragging = false;
+                System.out.println("Mouse pressed inside 1");
+                repaint();
+            } else if ( myRect7.contains(e.getX(),e.getY())){
+                offsetX = e.getX() - x3;
+                offsetY = e.getY() - y3;
+                dragging = false;
+                System.out.println("Mouse pressed inside 1");
+                repaint();
+            } else if ( myRect8.contains(e.getX(),e.getY())){
+                offsetX = e.getX() - x3;
+                offsetY = e.getY() - y3;
+                dragging = false;
+                System.out.println("Mouse pressed inside 1");
+                repaint();
+            }
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            dragging = true;
+            line = false;
+            mousereleased = true;
+            drawstring = false;
+            for(Line2D obj:arrowLines){
+                if(obj.intersects((Rectangle2D)(myRect1))){
+                    System.out.println("Line Intersected with rectangle");
+                    System.out.println("X1 = "+obj.getX1());
+                    System.out.println("Y1 = "+obj.getY1());
+                    int x1 =(int) obj.getX2();
+                    int y1 =(int) obj.getY2();
+                    drawstring = true;
+                    //g2d.drawString("A",x1+20,y1-20);
+                    x3 = 23; y3 = 15;
+                    intersects = true;
+                    labels.add(new label("A",x1+10,y1));
+                    repaint();
+
+                } else{
+                    System.out.println("Line not Intersected with rectangle");
+                    intersects = false;
+                    repaint();
+                }
+            }
+            repaint();
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseDragged(MouseEvent e) {
+            mousedragged = true;
+            x3 = e.getX() - offsetX;
+            y3 = e.getY() - offsetY;
+            repaint();
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent e) {
+        }
 
         void drawArrow(Graphics g1, int x1, int y1, int x2, int y2) {
             Graphics2D g = (Graphics2D) g1.create();
@@ -358,8 +509,7 @@ public class Graph extends JFrame {
             endY = y + (int)(Math.sin(Math.toRadians(a)) * len);
         }
 
-        public double getDistanceEdge(float x1, float y1, float x2, float y2, float x3, float y3)    //calculates distance between a point and a line
-        {
+        public double getDistanceEdge(float x1, float y1, float x2, float y2, float x3, float y3)        {
             float px = x2 - x1;
             float py = y2 - y1;
             float temp = (px * px) + (py * py);
@@ -383,27 +533,6 @@ public class Graph extends JFrame {
             int dx = x2 - x1;
             int dy = y2 - y1;
             return (int) Math.sqrt(dx * dx + dy * dy);
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e) {    //for node selection
-            mX = e.getX();
-            mY = e.getY();
-            int d2;
-            for (int i = 0; i < nodes.length; i++) {
-                d2 = getDistance(nodes[i].return_xaxis(), nodes[i].return_yaxis(), mX, mY);
-                if ( d2 <= 20 ) {                    //distance between the mouse clicked pointer and the center of the circle
-                    nodes[i].selected = true;
-                    selected = true;
-                    nodes[i].labelselected = true;
-                    alertBox(i);
-                    repaint();
-                    break;
-                } else
-                   nodes[i].selected = false;
-            }
-            getSelectedLine(e.getX(),e.getY());
-            //repaint();
         }
 
         private Shape getSelectedLine(int x,int y){
@@ -456,69 +585,8 @@ public class Graph extends JFrame {
                 nodes[index].a_315 = true;
             }
         }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-            x3 = 23;
-            y3 = 15;
-            if ( myRect1.contains(e.getX(), e.getY())){ //&& myRect2.contains(prex, prey) && myRect3.contains(prex, prey) && myRect4.contains(prex, prey) && myRect5.contains(prex, prey)
-                    //&& myRect6.contains(prex, prey) && myRect7.contains(prex, prey) && myRect8.contains(prex, prey)   too many internal calls error !!
-                offsetX = e.getX() - x3;
-                offsetY = e.getY() - y3;
-                dragging = false;
-                System.out.println("Mouse pressed inside the rectangle");
-                //repaint();
-            }
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-            dragging = true;
-            line = false;
-            //repaint();
-            for(Line2D obj:arrowLines){
-                if(obj.intersects((Rectangle2D)(myRect1))){
-                    System.out.println("Line Intersected with rectangle");
-                    repaint();
-                }
-            }
-
-           /*dragging = true;
-            line = false;
-            int d3;
-            for (int i = 0; i < nodes.length; i++) {
-                d3 = getDistance(nodes[i].return_xaxis(), nodes[i].return_yaxis(), e.getX(), e.getY());
-                if ( d3 <= 30 ) {//distance between the mouse clicked pointer and the center of the circle
-                    selected = true;
-                    //nodes[i].labelselected = true;
-                    line = true;
-                    break;
-                }
-            }*/
-
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseDragged(MouseEvent e) {
-            x3 = e.getX() - offsetX;
-            y3 = e.getY() - offsetY;
-            //repaint();
-        }
-
-        @Override
-        public void mouseMoved(MouseEvent e) {
-        }
     }
+
 
     class GraphLoader {
 
@@ -621,6 +689,25 @@ public class Graph extends JFrame {
 
         void createEdge(int sX, int sY, int dX, int dY){
             edge.setLine(sX,sY,dX,dY);
+        }
+
+    }
+
+    class label{
+        String name;
+        int x;
+        int y;
+
+        label(){
+            this.name = null;
+            this.x  = 0;
+            this.y = 0;
+        }
+
+        label(String s, int x1, int y1){
+            this.name = s;
+            this.x  = x1;
+            this.y = y1;
         }
 
     }
